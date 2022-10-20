@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import { Fragment } from 'react'
+import Link from 'next/link'
 
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const profile = ['Your Profile', 'Settings']
+const navigation = ['Vendas', 'Cancelamentos']
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -26,6 +28,19 @@ export function Header() {
                                     />
                                 </div>
                                 <div className="hidden md:block">
+                                    <div className="ml-10 flex items-baseline space-x-4">
+                                        {navigation.map((item) =>
+                                        (
+                                            <Link href={item} key={item}>
+                                                <a
+                                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                                >
+                                                    {item}
+                                                </a>
+                                            </Link>
+                                        )
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                             <div className="hidden md:block">
@@ -104,6 +119,19 @@ export function Header() {
                     </div>
 
                     <Disclosure.Panel className="md:hidden">
+                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                            {navigation.map((item) =>
+                            (
+                                <Link href={item} key={item}>
+                                    <a
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        {item}
+                                    </a>
+                                </Link>
+                            )
+                            )}
+                        </div>
                         <div className="pt-4 pb-3 border-t border-gray-700">
                             <div className="flex items-center px-5">
                                 <div className="ml-3">
