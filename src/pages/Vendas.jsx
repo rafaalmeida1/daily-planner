@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import Head from 'next/head'
+import Head from 'next/head';
+import { CircleNotch } from 'phosphor-react';
 import { useEffect, useState } from 'react';
-import { Header } from '../components/Header'
+import { Header } from '../components/Header';
 import { api } from '../services/api';
 
 export default function Vendas() {
@@ -240,7 +241,9 @@ export default function Vendas() {
                   </div>
                 </div>
                 {/* <button type="submit" className=" bg-green-400 hover:bg-green-500 duration-200 ">Enviar</button> */}
-                <button className="p-3 mt-3 rounded-lg w-full bg-green-400 hover:bg-green-600" type="submit" mt={6} isLoading={isLoading}>Enviar</button>
+                <button className="p-3 mt-3 rounded-lg w-full bg-green-400 hover:bg-green-600 flex justify-center" type="submit" mt={6}>
+                  {isLoading ? <CircleNotch size={24} className="animate-spin" /> : 'Enviar'}
+                </button>
               </form>
             </div>
           </div>
