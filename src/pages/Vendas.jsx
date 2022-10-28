@@ -26,11 +26,11 @@ export default function Vendas() {
   const [weekDay, setWeekDay] = useState(currentWeekDay);
   const [date, setDate] = useState(today.toLocaleDateString());
   const [hour, setHour] = useState(hourNow);
-  const [salesPerHour, setSalesPerHour] = useState(0);
-  const [pa, setPA] = useState(0);
-  const [tm, setTM] = useState(0);
-  const [wap, setWap] = useState(0);
-  const [foundation, setFoundation] = useState(0);
+  const [salesPerHour, setSalesPerHour] = useState(null);
+  const [pa, setPA] = useState(null);
+  const [tm, setTM] = useState(null);
+  const [wap, setWap] = useState(null);
+  const [foundation, setFoundation] = useState(null);
   const [sales, setSales] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -187,6 +187,7 @@ export default function Vendas() {
                       type="number"
                       value={salesPerHour}
                       onChange={(e) => setSalesPerHour(e.target.value)}
+                      required
                     />
                   </div>
                 </div>
@@ -201,6 +202,7 @@ export default function Vendas() {
                       type="number"
                       value={pa}
                       onChange={(e) => setPA(e.target.value)}
+                      required
                     />
                   </div>
                   <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
@@ -213,6 +215,7 @@ export default function Vendas() {
                       type="number"
                       value={tm}
                       onChange={(e) => setTM(e.target.value)}
+                      required
                     />
                   </div>
                   <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
@@ -225,6 +228,7 @@ export default function Vendas() {
                       type="number"
                       value={wap}
                       onChange={(e) => setWap(e.target.value)}
+                      required
                     />
                   </div>
                   <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
@@ -237,6 +241,7 @@ export default function Vendas() {
                       type="number"
                       value={foundation}
                       onChange={(e) => setFoundation(e.target.value)}
+                      required
                     />
                   </div>
                 </div>

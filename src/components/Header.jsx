@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import { Fragment } from 'react'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
-const profile = ['Your Profile', 'Settings']
+const profile = ['Your Profile']
 const navigation = ['Vendas', 'Cancelamentos']
 
 function classNames(...classes) {
